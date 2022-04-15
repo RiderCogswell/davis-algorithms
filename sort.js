@@ -1,4 +1,6 @@
 // O(n^2) - Quadratic Complexity * not an efficient function because the needless loops through the data - bubble sorts are not a great algorithm
+
+// IF ARRAY IS ALREADY SORTED HOWEVER BUBBLE SORTS ONLY NEEDS TO TRAVERSE ONCE, RESULTING IN O(n)
 const bubbleSort = (arr) => {
     let sorted = false;
 
@@ -48,5 +50,7 @@ const quickSort = (arr) => {
     // merge all arrays
     return quickSort(left).concat(pivot, quickSort(right));  
 };
+
+// Merge Sort 
 
 module.exports = { bubbleSort, quickSort }
