@@ -26,7 +26,7 @@ const bubbleSort = (arr) => {
     return arr;
 };
 
-// O(n log n) - Not exactly a logarithmic complexity, because the data is shrinking on each iteration, but it still performs a lineat traversal on those smaller data sets. this is a very efficient algorithm but that does not always make it the best for each
+// O(n log n) - Not exactly a logarithmic complexity, because the data is shrinking on each iteration, but it still performs a linear traversal on those smaller data sets. this is a very efficient algorithm but that does not always make it the best for each
 const quickSort = (arr) => {
     // don't quick sort a small array
     if (arr <= 1) {
