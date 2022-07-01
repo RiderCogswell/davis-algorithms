@@ -8,6 +8,8 @@ class BST {
 }
 
 // iterative approach
+// O(log(n)) average time, O(n) worst
+// O(1) space
 const findClosestValueInBST = (tree, target) => {
   return findClosestHelper(tree, target, tree.value)
 }

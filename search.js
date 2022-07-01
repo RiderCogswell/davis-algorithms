@@ -25,4 +25,24 @@ const binarySearch = (arr, num, left, right) => {
     }
 };
 
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.children = [];
+    }
+
+    depthFirstSearch = (array) => {
+        // push this.child into array
+        array.push(this.child)
+
+        // loop through and recursively perform DFS on each child
+        for (const child of this.children) {
+            child.depthFirstSearch(array);
+        }
+        
+        return array;
+    }
+}
+
+
 module.exports = { linearSearch, binarySearch };
