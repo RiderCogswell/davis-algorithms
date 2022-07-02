@@ -31,6 +31,11 @@ class Node {
         this.children = [];
     }
 
+    addChild(name) {
+        this.children.push(new Node(name));
+        return this;
+    }
+
     depthFirstSearch = (array) => {
         // push this.child into array
         array.push(this.child)
@@ -40,6 +45,22 @@ class Node {
             child.depthFirstSearch(array);
         }
         
+        return array;
+    }
+
+    breadthFirstSearch = (array) => {
+        // create nodes variable holding array of this
+        let nodes = [this]
+
+        // loop through while there are nodes to visit
+        while (nodes.length) {
+            // set current the first element from nodes,
+            let current = nodes.shift()
+            // push new values to end of array
+            array.push(nodes.value)
+            // push the current children to the nodes to cycle through
+            nodes.push(...current.children)
+        }
         return array;
     }
 }
