@@ -33,6 +33,7 @@ const findClosestHelper = (tree, target, closest) => {
   return closest;
 }
 
+// O (n) T & S
 // calculate individual branch sums and return in array!
 const branchSums = (root) => {
   // create variable to hold sums
@@ -57,7 +58,8 @@ const calculateBranchSums = (node, currentSum, sums) => {
     sums.push(newCurrentSum);
     return;
   }
-
+  
+  // recursively loop through and visit the children branches of the tree.
   calculateBranchSums(node.left, newCurrentSum, sums);
   calculateBranchSums(node.right, newCurrentSum, sums);
 }
