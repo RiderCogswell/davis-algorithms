@@ -43,14 +43,17 @@ const branchSums = (root) => {
   return sums;
 };
 
-// math function
+// function taking in root node, currentSum, and sums array
 const calculateBranchSums = (node, currentSum, sums) => {
   // if no branches
   if (!node) return;
   
-  // create new variable, 
+  // create new variable holding the current sum + the current node.value
+  
   const newCurrentSum = currentSum + node.value;
+  // if no more children nodes,
   if (!node.left && !node.right) {
+    // push newCurrentSum into the sums array
     sums.push(newCurrentSum);
     return;
   }
