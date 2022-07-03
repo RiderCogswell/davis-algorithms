@@ -1,5 +1,3 @@
-const e = require("express");
-
 class BST {
   constructor(value) {
     this.value = value;
@@ -84,5 +82,40 @@ class BST {
     } else {
       return true;
     }
+  }
+
+  // recursive
+  removeRec(value, parent = null) {
+    if (value < this.value) {
+      if (this.left !== null) {
+        this.left.removeRec(value, this)
+      }
+    } else if (value > this.value) {
+      if (this.right !== null) {
+        this.right.removeRec(value, this)
+      }
+    } else {
+      if (this.left !== null && this.right !== null) {
+        this.value = this.right.getMinValue();
+        this.right.removeRec(this.value, this)
+      } else if (parent === null) {
+        if (this.left !== null) {
+          this.value = this.left.value;
+          this.right = this.right.left;
+          this.left = this.right.right;
+        } else if (this.right !== null) {
+          this.value = this.right.value;
+          this.left = this.right.left;
+          this.right = this.right.right;
+        } else {
+        // if both left and right nodes, and parent is null, its a single node tree so do nothing
+        }
+      } else if (parent.left === this) {
+        parent.left = this.left !== null ? this.left : this.right;
+      } else if (parent.right === this) {
+        parent.right = this.left !== null ? this.left : this.right;
+      }
+    }
+    return this;
   }
 }
