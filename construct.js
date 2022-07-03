@@ -64,17 +64,23 @@ class BST {
   containsRec(value) {
     // if input value is smaller than current value
     if (value < this.value) {
+      // if left node is empty
       if (this.left === null) {
         return false;
       } else {
-        return this.left.containsRec(value)
+        // perform contains(value) on this.left
+        return this.left.containsRec(value);
       }
+      // if input value is larger than current value
     } else if (value > this.value) {
+      // if right node is empty
       if (this.right === null) {
         return false;
       } else {
+        // perform contains func on right node
         return this.right.containsRec(value)
       }
+      // if value matches return true
     } else {
       return true;
     }
