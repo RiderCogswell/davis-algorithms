@@ -86,23 +86,40 @@ class BST {
 
   // recursive
   removeRec(value, parent = null) {
+    // if removing value is less than current value
     if (value < this.value) {
+      // if left node isnt empty
       if (this.left !== null) {
+        // remove value and give node new  parent with current node (this)
         this.left.removeRec(value, this)
       }
+      // if removing value is greater than current value
     } else if (value > this.value) {
+      // if right node isnt empty
       if (this.right !== null) {
+        // remove value and give it a new parent
         this.right.removeRec(value, this)
       }
+      // if input value === current value
     } else {
+      // if both left and right nodes are not null 
       if (this.left !== null && this.right !== null) {
+        // set current value = right branches smallest value
         this.value = this.right.getMinValue();
+        // the right node is removed and given a new parent
         this.right.removeRec(this.value, this)
+        // if parent is empty (been removed)
       } else if (parent === null) {
+        // rearrange tree!!!!
+        // if left node isnt empty
         if (this.left !== null) {
+          // set current value equal to left nodes value
           this.value = this.left.value;
+          // set right nodes  equal to current right nodes, left node
           this.right = this.right.left;
+          // set left node equal to current rights right node
           this.left = this.right.right;
+          // same as above but on opposite side
         } else if (this.right !== null) {
           this.value = this.right.value;
           this.left = this.right.left;
@@ -110,9 +127,12 @@ class BST {
         } else {
         // if both left and right nodes, and parent is null, its a single node tree so do nothing
         }
+        // if parent.left equals currentnode
       } else if (parent.left === this) {
+        // if currentnode.left isnt empty replace parent.left with currentNode.left, else with current node.right
         parent.left = this.left !== null ? this.left : this.right;
       } else if (parent.right === this) {
+        // if currentnode.left isnt empty replace parent.right  with currentNode.left, else with current node.right
         parent.right = this.left !== null ? this.left : this.right;
       }
     }
