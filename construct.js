@@ -1,3 +1,5 @@
+const e = require("express");
+
 class BST {
   constructor(value) {
     this.value = value;
@@ -8,7 +10,7 @@ class BST {
   // recursive
   insertRec(value) {
     // if value is greater than current value, work on left side
-    if (value > this.value) {
+    if (value < this.value) {
       // if left node is empty
       if (this.left === null) {
         // set left as a new BST value
@@ -56,5 +58,25 @@ class BST {
     }
 
     return this;
+  }
+
+  // recursive
+  containsRec(value) {
+    // if input value is smaller than current value
+    if (value < this.value) {
+      if (this.left === null) {
+        return false;
+      } else {
+        return this.left.containsRec(value)
+      }
+    } else if (value > this.value) {
+      if (this.right === null) {
+        return false;
+      } else {
+        return this.right.containsRec(value)
+      }
+    } else {
+      return true;
+    }
   }
 }
