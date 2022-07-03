@@ -28,9 +28,10 @@ class BST {
         this.right.insertRec(value)
       } 
       
+  
+    }
     // return tree
     return this;
-    }
   }
 
   // iterative
