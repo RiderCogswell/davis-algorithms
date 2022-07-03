@@ -6,7 +6,7 @@ class BST {
   }
 
   // recursive
-  insert(value) {
+  insertRec(value) {
     // if value is greater than current value, work on left side
     if (value > this.value) {
       // if left node is empty
@@ -15,7 +15,7 @@ class BST {
         this.left = new BST(value)
       } else {
         // recursively call insert on left node
-        this.left.insert(value)
+        this.left.insertRec(value)
       }
       // else, work on right
     } else {
@@ -25,11 +25,35 @@ class BST {
         this.right = new BST(value)
       } else {
         // recursively call insert on right node
-        this.right.insert(value)
+        this.right.insertRec(value)
       } 
       
     // return tree
     return this;
     }
+  }
+
+  // iterative
+  insertIt(value) {
+    let currentNode = this;
+    while (true) {
+      if (value < currentNode.value) {
+        if (currentNode.left === null) {
+          currentNode.left = new BST(value);
+          break;
+        } else {
+          currentNode = currentNode.left
+        }
+      } else {
+        if (currentNode.right === null) {
+          currentNode.right = new BST(value);
+          break;
+        } else {
+          currentNode = currentNode.right;
+        }
+      }
+    }
+
+    return this;
   }
 }
