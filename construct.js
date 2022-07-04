@@ -176,6 +176,12 @@ class BST {
   // iterative
   getMinValueIt() {
     let currentNode = this;
-    //
+    // while currentNode.left has a value
+    while (currentNode.left !== null) {
+      // set currentNode as left node
+      currentNode = currentNode.left
+    }
+    // return current nodes value (min value)
+    return currentNode.value;
   }
 }
