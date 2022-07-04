@@ -84,6 +84,22 @@ class BST {
     }
   }
 
+  // iterative
+  containsIt(value) {
+    // make current var
+    let currentNode = this;
+    while (currentNode !== null) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
   // recursive
   removeRec(value, parent = null) {
     // if removing value is less than current value
@@ -136,6 +152,7 @@ class BST {
         parent.right = this.left !== null ? this.left : this.right;
       }
     }
+    // return tree
     return this;
   }
 }
