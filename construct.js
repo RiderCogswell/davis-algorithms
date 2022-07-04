@@ -86,17 +86,25 @@ class BST {
 
   // iterative
   containsIt(value) {
-    // make current var
+    // make current var with this refering to the tree
     let currentNode = this;
+    // while currentNode has a value
     while (currentNode !== null) {
+      // if value less than the currentNode value
       if (value < currentNode.value) {
+        // set current node to currentNode.left
         currentNode = currentNode.left;
+      // if value greater than current value
       } else if (value > currentNode.value) {
+        // set current node as right node
         currentNode = currentNode.right;
+        // if currentNode.value is equal to value
       } else {
+        // return true
         return true;
       }
     }
+    // if not return true
     return false;
   }
 
