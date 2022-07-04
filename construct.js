@@ -129,7 +129,7 @@ class BST {
       // if both left and right nodes are not null 
       if (this.left !== null && this.right !== null) {
         // set current value = right branches smallest value
-        this.value = this.right.getMinValue();
+        this.value = this.right.getMinValueRec();
         // the right node is removed and given a new parent
         this.right.removeRec(this.value, this)
         // if parent is empty (been removed)
@@ -162,5 +162,20 @@ class BST {
     }
     // return tree
     return this;
+  }
+
+  // recursive
+  getMinValueRec() {
+    if (this.left === null) {
+      return this.value;
+    } else {
+      return this.left.getMinValueRec();
+    }
+  }
+
+  // iterative
+  getMinValueIt() {
+    let currentNode = this;
+    //
   }
 }
