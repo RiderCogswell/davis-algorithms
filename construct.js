@@ -140,9 +140,9 @@ class BST {
           // set current value equal to left nodes value
           this.value = this.left.value;
           // set right nodes  equal to current right nodes, left node
-          this.right = this.right.left;
+          this.right = this.left.right;
           // set left node equal to current rights right node
-          this.left = this.right.right;
+          this.left = this.left.left;
           // same as above but on opposite side
         } else if (this.right !== null) {
           this.value = this.right.value;
@@ -164,10 +164,41 @@ class BST {
     return this;
   }
 
-  // iterative
-  removeIt(value, parent = null) {
+  // iterative/recursive
+  removeIt(value, parentNode = null) {
     let currentNode = this;
-    while ()
+    while (currentNode !== null) {
+      if (value < currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.right;
+      } else {
+        if (currentNode.left !== null && currentNode.right !== null) {
+          currentNode.value = currentNode.right.getMinValueIt();
+          currentNode.right.removeIt(currentNode.value, currentNode);
+        } else if (parentNode === null) {
+          if (currentNode.left !== null) {
+            currentNode.value = currentNode.left.value;
+            currentNode.right = currentNode.left.right;
+            currentNode.left = currentNode.left.left;
+          } else if (currentNode.right !== null) {
+            currentNode.value = currentNode.right.value;
+            currentNode.left = currentNode.right.left;
+            currentNode.right = currentNode.right.right;
+          } else {
+            // must be a single tree node
+          }
+        } else if (parentNode.left === currentNode) {
+          parentNode.left = currentNode.left !== null ? currentNode.left : currentNode.right;
+        } else if (parentNode.right === currentNode) {
+          parentNode.left = currentNode.left !== null ? currentNode.left : currentNode.right;
+        }
+        break;
+      }
+    }
+    return this;
   }
 
   // recursive
