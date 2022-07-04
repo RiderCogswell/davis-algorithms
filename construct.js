@@ -164,6 +164,12 @@ class BST {
     return this;
   }
 
+  // iterative
+  removeIt(value, parent = null) {
+    let currentNode = this;
+    while ()
+  }
+
   // recursive
   getMinValueRec() {
     if (this.left === null) {
