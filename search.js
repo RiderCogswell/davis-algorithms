@@ -58,7 +58,7 @@ class Node {
             let current = nodes.shift()
             // push new values to end of array
             array.push(nodes.value)
-            // push the current children to the nodes to cycle through
+            // push the current children to the nodes to cycle through, while not disturbing the others
             nodes.push(...current.children)
         }
         return array;
