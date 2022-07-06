@@ -93,11 +93,17 @@ const rootDepths = (root) => {
 
 // invert binary tree iterative
 const invertBinaryTree = (tree) => {
+  // fifo so use a queue 
   let queue = [tree];
+  // loop through while queue has values
   while (queue.length) {
+    // take first value
     let current = queue.shift()
+    // if current is empty continue for one iteration
     if (current === null) continue;
+    // sort tree
     swapLeftAndRight(current)
+    // push left and right side into queue
     queue.push(current.left)
     queue.push(current.right)
   }
@@ -105,14 +111,20 @@ const invertBinaryTree = (tree) => {
 
 // invert binary tree recursively
 const invertBinaryTreeRec = (tree) => {
+  // base case: if tree is empty, return
   if (tree === null) return;
+  // sort
   swapLeftAndRight(tree);
+  // recursively call left and right inversion
   invertBinaryTreeRec(tree.left);
   invertBinaryTreeRec(tree.right);
 }
 
 const swapLeftAndRight = (tree) => {
+  // create variable for one side
   const left = tree.left;
+  // set left = right
   tree.left = tree.right;
+  // set right = left variable!
   tree.right = left;
 }
