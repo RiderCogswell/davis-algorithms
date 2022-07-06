@@ -63,22 +63,37 @@ const optimizedDuplicates = (arr) => {
     return `${mostValue} appeared ${mostCount} times.`;
 }
 
-const removeDuplicatesFromLinkedList(linkedList) {
+class LinkedList {
+    constructor(value) {
+        this.value;
+        this.next
+    }
+}
+
+const removeDuplicatesFromLinkedList = (linkedList) => {
+    // current node var
     let currentNode = linkedList;
+    // while ll isnt empty
     while (currentNode !== null) {
+        // set nextNode var to equal current.next
         let nextNode = currentNode.next;
+        // while nextNode isnt empty and the next node and current node are the same value (AKA DUPES), 
         while (nextNode !== null && nextNode.value === currentNode.value) {
+            // nextnode = nextNode.next // removing the connection to the linked list
             nextNode = nextNode.next;
         }
+        // set current.next = nextNode
         currentNode.next = nextNode;
+        // set current = next // re establishing position incase of change
         currentNode = nextNode;
     }
+    // return linkedList
     return linkedList;
 }
 
 console.log(optimizedDuplicates(numbers))
 
-module.exports = { mostDuplicates, optimizedDuplicates };
+module.exports = { mostDuplicates, optimizedDuplicates, removeDuplicatesFromLinkedList };
 
 
 

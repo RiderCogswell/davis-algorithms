@@ -41,7 +41,7 @@ class BinaryTree {
         return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1
     }
 
-    // traverse a level
+    // traverse a level recursively
     traverseLevel (node, levelRemaining) {
         // end of tree
         if (node === null) {
