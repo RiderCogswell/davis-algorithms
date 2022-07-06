@@ -63,6 +63,19 @@ const optimizedDuplicates = (arr) => {
     return `${mostValue} appeared ${mostCount} times.`;
 }
 
+const removeDuplicatesFromLinkedList(linkedList) {
+    let currentNode = linkedList;
+    while (currentNode !== null) {
+        let nextNode = currentNode.next;
+        while (nextNode !== null && nextNode.value === currentNode.value) {
+            nextNode = nextNode.next;
+        }
+        currentNode.next = nextNode;
+        currentNode = nextNode;
+    }
+    return linkedList;
+}
+
 console.log(optimizedDuplicates(numbers))
 
 module.exports = { mostDuplicates, optimizedDuplicates };
