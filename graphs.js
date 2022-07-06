@@ -45,3 +45,10 @@ function bfs(array) {
   return array;
 }
 
+// DFS 
+function dfs(array) {
+  array.push(this.value);
+
+  this.children.forEach(child => child.dfs(array));
+  return array
+}
