@@ -1,3 +1,4 @@
+// single cycle 
 const hasSingleCycle = (array) => {
   let visitedCount = 0;
   let currentIndex = 0;
