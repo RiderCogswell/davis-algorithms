@@ -90,3 +90,29 @@ const rootDepths = (root) => {
 
   return sumOfDepth;
 }
+
+// invert binary tree iterative
+const invertBinaryTree = (tree) => {
+  let queue = [tree];
+  while (queue.length) {
+    let current = queue.shift()
+    if (current === null) continue;
+    swapLeftAndRight(current)
+    queue.push(current.left)
+    queue.push(current.right)
+  }
+}
+
+// invert binary tree recursively
+const invertBinaryTreeRec = (tree) => {
+  if (tree === null) return;
+  swapLeftAndRight(tree);
+  invertBinaryTreeRec(tree.left);
+  invertBinaryTreeRec(tree.right);
+}
+
+const swapLeftAndRight = (tree) => {
+  const left = tree.left;
+  tree.left = tree.right;
+  tree.right = left;
+}
