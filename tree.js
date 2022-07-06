@@ -103,7 +103,13 @@ const invertBinaryTree = (tree) => {
   }
 }
 
-
+// invert binary tree recursively
+const invertBinaryTreeRec = (tree) => {
+  if (tree === null) return;
+  swapLeftAndRight(tree);
+  invertBinaryTreeRec(tree.left);
+  invertBinaryTreeRec(tree.right);
+}
 
 const swapLeftAndRight = (tree) => {
   const left = tree.left;
