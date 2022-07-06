@@ -45,13 +45,17 @@ function bfs(array) {
     // push each individual child into the nodes
     nodes.push(...current.children)
   }
+  // return array
   return array;
 }
 
 // DFS |  O(n + edges) T | O(n) S
 function dfs(array) {
+  // push node values into the array
   array.push(this.value);
 
+  // loop through and perform a dfs on each child
   this.children.forEach(child => child.dfs(array));
+  // return array
   return array
 }
