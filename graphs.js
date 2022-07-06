@@ -38,14 +38,17 @@ function bfs(array) {
   const nodes = [array]
 
   while (nodes.length > 0) {
+    // shift node off of the front
     const current = nodes.shift();
+    // push current node value into array
     array.push(current.value)
+    // push each individual child into the nodes
     nodes.push(...current.children)
   }
   return array;
 }
 
-// DFS 
+// DFS |  O(n + edges) T | O(n) S
 function dfs(array) {
   array.push(this.value);
 
