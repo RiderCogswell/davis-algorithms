@@ -34,11 +34,14 @@ routes.forEach(route => addEdge(...route))
 console.log(adjacencyList)
 
 // BFS
-function bfs(start) {
-  const queue = [start]
+function bfs(array) {
+  const nodes = [array]
 
-  while (queue.length > 0) {
-    
+  while (nodes.length > 0) {
+    const current = nodes.shift();
+    array.push(current.value)
+    nodes.push(...current.children)
   }
+  return array;
 }
 
