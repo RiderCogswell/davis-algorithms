@@ -11,3 +11,9 @@ function minimumWaitingTime(queries: number[]): number {
 
   return totalTime;
 }
+
+export function nonCunstructibleChange(coins: number[]): number {
+  coins.sort((a, b) => a - b);
+
+  return 1;
+}
