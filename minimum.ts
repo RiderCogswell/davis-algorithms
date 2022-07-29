@@ -15,5 +15,10 @@ function minimumWaitingTime(queries: number[]): number {
 export function nonCunstructibleChange(coins: number[]): number {
   coins.sort((a, b) => a - b);
 
-  return 1;
+  let currentChange = 0;
+  for (const coin of coins) {
+    if (coin > currentChange + 1) return currentChange + 1;
+    currentChange += coin
+  }
+  return currentChange + 1;
 }
