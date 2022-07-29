@@ -38,7 +38,7 @@ const findClosestHelper = (tree, target, closest) => {
 const branchSums = (root) => {
   // create variable to hold sums
   let sums = [];
-  // call recursive function
+  // call recursive function setting currentSum to 0 
   calculateBranchSums(root, 0, sums);
   // when it is finished, return array of sums
   return sums;
