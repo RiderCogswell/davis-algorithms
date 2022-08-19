@@ -43,3 +43,12 @@ const threeSum = (array, targetSum) => {
   }
   return triplets;
 }
+
+function miniMaxSum(arr) {
+  let sum = arr.reduce((a, b) => a + b);
+
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+
+  return [(sum - max), (sum - min)]
+} 
