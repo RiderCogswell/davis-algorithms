@@ -95,14 +95,3 @@ console.log(optimizedDuplicates(numbers))
 
 module.exports = { mostDuplicates, optimizedDuplicates, removeDuplicatesFromLinkedList };
 
-
-
-
-    
-        
-
-
-
-
-
-

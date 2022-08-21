@@ -4,7 +4,7 @@ function timeConversion(s) { // s = '1:00:05PM'
   let milTime = '';
   
   if (amPm === 'A') {
-      if (s.substring(0, 2) === '12') { // if
+      if (s.substring(0, 2) === '12') { // 
           milTime = '00'
       } else {
           milTime = s.substring(0, 2)
