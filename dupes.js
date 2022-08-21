@@ -95,3 +95,10 @@ console.log(optimizedDuplicates(numbers))
 
 module.exports = { mostDuplicates, optimizedDuplicates, removeDuplicatesFromLinkedList };
 
+const lonelyinteger = (arr) => {
+    // Write your code here
+    let unique = arr.filter(a => {
+        return arr.indexOf(a) === arr.lastIndexOf(a) // if first and last are the same index we know it is unique
+    });
+    return unique;
+}
