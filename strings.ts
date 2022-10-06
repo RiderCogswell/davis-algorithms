@@ -1,21 +1,19 @@
-const vowelsNum = (string) => {
+const vowelsNum = (str: string): number => {
   let count = 0;
 
-  for (let i in string) {
-    let val = string[i].toLowerCase()
+  for (let i = 0; i < str.length; i++) {
+    let val = str[i].toLowerCase()
     if (val === 'a' || val === 'i' || val === 'u' || val === 'e' || val === 'o') {
       count++
     }
   }
 
-  console.log(count)
+  return count;
 }
-
-
 
 vowelsNum('AAAAUUAUAUAUAUUAUAUAUA')
 
-const palindromeCheck = (str) => {
+const palindromeCheck = (str: string): boolean => {
   let reversed = str.split('').reverse().join('')
 
   if (reversed === str) {
