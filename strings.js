@@ -14,3 +14,15 @@ const vowelsNum = (string) => {
 
 
 vowelsNum('AAAAUUAUAUAUAUUAUAUAUA')
+
+const palindromeCheck = (str) => {
+  let reversed = str.split('').reverse().join('')
+
+  if (reversed === str) {
+    return true;
+  }
+
+  return false;
+}
+
+palindromeCheck('racecar')

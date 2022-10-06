@@ -1,0 +1,20 @@
+{
+  "name": "davis-algorithms",
+  "version": "1.0.0",
+  "description": "## Algorithm practice for coding interviews! Hey! I've been doing a lot of practice on algoexpert and leetcode and its making my github commits look bad😭 So I've made this repository to showcase some of the things I have been learning!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiderCogswell/davis-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiderCogswell/davis-algorithms/issues"
+  },
+  "homepage": "https://github.com/RiderCogswell/davis-algorithms#readme"
+}
