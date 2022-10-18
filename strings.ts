@@ -25,16 +25,28 @@
 
 // palindromeCheck('racecar')
 
-const repeatingChar = (string: string): string {
-  let char = '';
-  let index = 0;
+// const repeatingChar = (str: string): string => {
+//   for (let i = 1; i < str.length; i++) {
+//     let char = str[i];
+//     if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
+//       console.log(char);
+//       break;
+//     }
+//   }
 
-  for (let i = 1; i < string.length; i++) {
-    let repeat = false;
-    if (string[index] !== string[i]) {
-      
+//   return '';
+// }
+
+const firstNonRepeatingCharacter = (str: string): string => {
+  for (let i = 0; i < str.length; i++) {
+  let char = str[i];
+  // lastIndex returns the last index of the substring that you pass into this method, SOOOOO
+  if (str.indexOf(char) === str.lastIndexOf(char)) { // if theres a match, return the char
+    return char;
     }
   }
+  return '';
+  }
 
-  return char;
-}
+
+firstNonRepeatingCharacter('the quick brown fox jumps over the calm kitten quietly')

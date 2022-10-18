@@ -22,3 +22,10 @@ export function nonCunstructibleChange(coins: number[]): number {
   }
   return currentChange + 1; // return currentchange + 1 because that is the minimum nonConstructibleChange
 }
+
+export const isNum = (input: any): boolean => {
+  if (typeof input === "number" && input % 1 === 0) return true;
+  return false
+}
+
+isNum(88.8)
