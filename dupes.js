@@ -102,3 +102,20 @@ const lonelyinteger = (arr) => {
     });
     return unique;
 }
+
+console.log(lonelyinteger(numbers))
+
+
+
+// es6
+const firstDupe = (arr) => {
+    let dupe = arr.filter((val, i) => arr.lastIndexOf(val) !== i);
+    
+    if (dupe.length === 0) {
+        return undefined;
+    }
+
+    return dupe[0]
+}
+
+console.log(firstDupe([7, -4, 8, 5])); 
