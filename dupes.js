@@ -105,10 +105,17 @@ const lonelyinteger = (arr) => {
 
 console.log(lonelyinteger(numbers))
 
+const firstDupeES5 = (arr) => {
+    for(let i = 0; i < arr.length; i++){
+       if(arr.lastIndexOf(arr[i]) !== i){
+          return arr[i];
+       };
+    };
+  
+    return undefined;
+}
 
-
-// es6
-const firstDupe = (arr) => {
+const firstDupeES6 = (arr) => {
     let dupe = arr.filter((val, i) => arr.lastIndexOf(val) !== i);
     
     if (dupe.length === 0) {
@@ -118,4 +125,5 @@ const firstDupe = (arr) => {
     return dupe[0]
 }
 
-console.log(firstDupe([7, -4, 8, 5])); 
+console.log(firstDupeES5([7, -4, 8, 5])); 
+console.log(firstDupeES6([7, -4, 8, 5])); 
