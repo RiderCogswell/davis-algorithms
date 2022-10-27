@@ -1,7 +1,7 @@
 // O(n^2) - Quadratic Complexity * not an efficient function because the needless loops through the data - bubble sorts are not a great algorithm
 
 // IF ARRAY IS ALREADY SORTED HOWEVER BUBBLE SORTS ONLY NEEDS TO TRAVERSE ONCE, RESULTING IN O(n)
-const bubbleSort = (arr) => {
+export const bubbleSort = (arr: number[]): number[] => {
     let sorted = false;
 
     // allows the function to loop
@@ -27,9 +27,9 @@ const bubbleSort = (arr) => {
 };
 
 // O(n log n) - Not exactly a logarithmic complexity, because the data is shrinking on each iteration, but it still performs a linear traversal on those smaller data sets. this is a very efficient algorithm but that does not always make it the best for each
-const quickSort = (arr) => {
+export const quickSort = (arr: number[]): number[] => {
     // don't quick sort a small array
-    if (arr <= 1) {
+    if (arr.length <= 1) {
         return arr;
     }
 
@@ -51,6 +51,17 @@ const quickSort = (arr) => {
     return quickSort(left).concat(pivot, quickSort(right));  
 };
 
-// Merge Sort 
+// Counting Sort 
 
-module.exports = { bubbleSort, quickSort }
+const countingSort = (arr: number[]): number[] => {
+    // Write your code here
+    let count = Array(100).fill(0);
+    
+    // loop through and every number add 1 
+    for (let num of arr) {
+        count[num]++
+    }
+    return count
+}
+
+countingSort([ 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
