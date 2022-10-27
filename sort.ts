@@ -35,8 +35,8 @@ export const quickSort = (arr: number[]): number[] => {
 
     // use first index as the pivot point
     let pivot = arr[0];
-    let left = [];
-    let right = [];
+    let left: number[] = [];
+    let right: number[] = [];
 
     // start at index 1 to ignore the pivot
     for (let i = 1; i < arr.length; i++) {
@@ -53,7 +53,7 @@ export const quickSort = (arr: number[]): number[] => {
 
 // Counting Sort 
 
-const countingSort = (arr: number[]): number[] => {
+export const countingSort = (arr: number[]): number[] => {
     // Write your code here
     let count = Array(100).fill(0);
     
