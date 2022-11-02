@@ -37,7 +37,6 @@ class BinaryTree {
         const leftHeight = this.getHeight(node.left);
         const rightHeight = this.getHeight(node.right);
         
-        // if left > right, leftHeight + 1, else, rightHeight + 1
         return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1
     }
 
