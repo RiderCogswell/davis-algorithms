@@ -58,4 +58,3 @@ class BinaryTree {
     }
 }
 
-export { BinaryTree, Node }
