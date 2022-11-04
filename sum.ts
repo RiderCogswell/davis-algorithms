@@ -1,4 +1,4 @@
-const twoSum = (array, targetSum) => {
+const twoSum = (array: number[], targetSum: number): number[] => {
   // sort (asc) for speed
   array.sort((a, b) => a - b);
 
@@ -44,7 +44,7 @@ const threeSum = (array: number[], targetSum: number): number[] => {
   return triplets;
 }
 
-function miniMaxSum(arr) {
+function miniMaxSum(arr: number[]): number[] {
   let sum = arr.reduce((a, b) => a + b);
 
   let min = Math.min(...arr);
