@@ -1,6 +1,6 @@
 // Breadth First Traversal
 
-class Node {
+export class Node {
     constructor (data) {
 
         this.data = data;
@@ -9,7 +9,7 @@ class Node {
     }
 }
 
-class BinaryTree {
+export class BinaryTree {
     constructor (data) {
         // sets root value
         this.root = null;
@@ -57,4 +57,3 @@ class BinaryTree {
         }
     }
 }
-
