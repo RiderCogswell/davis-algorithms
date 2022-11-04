@@ -19,7 +19,7 @@ const twoSum = (array, targetSum) => {
   return [];
 }
 
-const threeSum = (array, targetSum) => {
+const threeSum = (array: number[], targetSum: number): number[] => {
   // declare a global variable
   let triplets = [];
   // for speed, well sort before adding any sums
