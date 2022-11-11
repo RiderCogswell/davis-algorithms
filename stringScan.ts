@@ -1,7 +1,6 @@
 // demonstration algo for UK bootcamp
-type scan = (str: string, sub: string) => boolean;
 
-const stringScan = (str: string, sub: string): scan => { 
+const stringScan = (str: string, sub: string): void => { 
   if (str.includes(sub)) {
     console.log(true);
   } else {
@@ -16,4 +15,4 @@ const stringScan = (str: string, sub: string): scan => {
   // }
 }
 
-stringScan('lotus', 'l')
+stringScan('lotus', 'x')

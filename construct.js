@@ -27,8 +27,6 @@ class BST {
         // recursively call insert on right node
         this.right.insertRec(value)
       } 
-      
-  
     }
     // return tree
     return this;

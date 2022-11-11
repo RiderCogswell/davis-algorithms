@@ -19,5 +19,8 @@
   "homepage": "https://github.com/RiderCogswell/davis-algorithms#readme",
   "devDependencies": {
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
   }
 }
