@@ -1,5 +1,5 @@
 const Benchmark = require('benchmark');
-const { mostDuplicates, optimizedDuplicates } = require('./dupes');
+import { mostDuplicates, optimizedDuplicates } from './dupes';
 
 const numbers = [];
 for (let i = 1; i <= 10000; i++) {
