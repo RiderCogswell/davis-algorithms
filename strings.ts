@@ -1,43 +1,43 @@
-// const vowelsNum = (str: string): number => {
-//   let count = 0;
+const vowelsNums = (str: string): number => {
+  let count = 0;
 
-//   for (let i = 0; i < str.length; i++) {
-//     let val = str[i].toLowerCase()
-//     if (val === 'a' || val === 'i' || val === 'u' || val === 'e' || val === 'o') {
-//       count++
-//     }
-//   }
+  for (let i = 0; i < str.length; i++) {
+    let val = str[i].toLowerCase()
+    if (val === 'a' || val === 'i' || val === 'u' || val === 'e' || val === 'o') {
+      count++
+    }
+  }
 
-//   return count;
-// }
+  return count;
+}
 
-// vowelsNum('AAAAUUAUAUAUAUUAUAUAUA')
+vowelsNums('AAAAUUAUAUAUAUUAUAUAUA')
 
-// const palindromeCheck = (str: string): boolean => {
-//   let reversed = str.split('').reverse().join('')
+const palindromeChecker = (str: string): boolean => {
+  let reversed = str.split('').reverse().join('')
 
-//   if (reversed === str) {
-//     return true;
-//   }
+  if (reversed === str) {
+    return true;
+  }
 
-//   return false;
-// }
+  return false;
+}
 
-// palindromeCheck('racecar')
+palindromeChecker('racecar')
 
-// const repeatingChar = (str: string): string => {
-//   for (let i = 1; i < str.length; i++) {
-//     let char = str[i];
-//     if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
-//       console.log(char);
-//       break;
-//     }
-//   }
+const repeatingChars = (str: string): string => {
+  for (let i = 1; i < str.length; i++) {
+    let char = str[i];
+    if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
+      console.log(char);
+      break;
+    }
+  }
 
-//   return '';
-// }
+  return '';
+}
 
-const firstNonRepeatingCharacter = (str: string): string => {
+const firstNonRepeatingChar = (str: string): string => {
   for (let i = 0; i < str.length; i++) {
   let char = str[i];
   // lastIndex returns the last index of the substring that you pass into this method, SOOOOO
@@ -46,7 +46,7 @@ const firstNonRepeatingCharacter = (str: string): string => {
     }
   }
   return '';
-  }
+}
 
 
-firstNonRepeatingCharacter('the quick brown fox jumps over the calm kitten quietly')
+firstNonRepeatingChar('the quick brown fox jumps over the calm kitten quietly')
