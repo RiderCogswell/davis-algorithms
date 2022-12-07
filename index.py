@@ -15,4 +15,18 @@ def twoSum(nums, target):
         return [i, j]
 
 def threeSum(nums, target):
-  for i in range
+  triplets = []
+  nums.sort()
+  for i in range(len(nums)):
+    left = i + 1
+    right = len(nums) - 1
+    while left < right:
+      currentSum = nums[i] + nums[left] + nums[right]
+      if currentSum == target:
+        triplets.append([nums[i], nums[left], nums[right]])
+        left += 1
+        right -= 1
+      elif currentSum < target:
+        left += 1
+      else:
+        right -= 1
