@@ -30,3 +30,6 @@ def threeSum(nums, target):
         left += 1
       else:
         right -= 1
+  print(triplets)
+
+threeSum([-1, 0, 1, 2, -1, 4], 6)
