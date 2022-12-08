@@ -43,8 +43,11 @@ const threeSum = (array: number[], targetSum: number): Triplets[] => {
       }
     }
   }
+  console.log(triplets);
   return triplets;
 }
+
+threeSum([12, 3, 1, 2, -6, 5, -8, 6], 0)
 
 function miniMaxSum(arr: number[]): number[] {
   let sum = arr.reduce((a, b) => a + b);
