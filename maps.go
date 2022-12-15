@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	// twoSum([]int{2, 11, 7, 15}, 9)
-	threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
+	twoSum([]int{7, 15, 11, 2}, 9)
+	// threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
+	evenAndOdd([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
 }
 
 func twoSum(nums []int, target int) []int {
@@ -40,7 +41,7 @@ func threeSum(nums []int, target int) []int {
 	return []int{}
 }
 
-func evenAndOdd(nums []int) []int {
+func evenAndOdd(nums []int) {
 	// Write your code here
 	for _, v := range nums {
 		if v%2 == 0 {
@@ -49,5 +50,4 @@ func evenAndOdd(nums []int) []int {
 			fmt.Printf("%v is odd\n", v)
 		}
 	}
-	return []int{}
 }
