@@ -39,3 +39,15 @@ func threeSum(nums []int, target int) []int {
 	}
 	return []int{}
 }
+
+func evenAndOdd(nums []int) []int {
+	// Write your code here
+	for _, v := range nums {
+		if v%2 == 0 {
+			fmt.Printf("%v is even\n", v)
+		} else {
+			fmt.Printf("%v is odd\n", v)
+		}
+	}
+	return []int{}
+}
