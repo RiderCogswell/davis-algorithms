@@ -33,5 +33,9 @@ func twoSum(nums []int, target int) []int {
 }
 
 func threeSum(nums []int, target int) []int {
-	
+	// Write your code here
+	if len(nums) < 3 {
+		return []int{}
+	}
+	return []int{}
 }
