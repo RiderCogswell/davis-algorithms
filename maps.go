@@ -9,7 +9,6 @@ func main() {
 }
 
 func twoSum(nums []int, target int) []int {
-	// Write your code here
 	if len(nums) < 2 {
 		return []int{}
 	}
@@ -34,7 +33,6 @@ func twoSum(nums []int, target int) []int {
 }
 
 func threeSum(nums []int, target int) []int {
-	// Write your code here
 	if len(nums) < 3 {
 		return []int{}
 	}
@@ -42,7 +40,6 @@ func threeSum(nums []int, target int) []int {
 }
 
 func evenAndOdd(nums []int) {
-	// Write your code here
 	for _, val := range nums {
 		if val%2 == 0 {
 			fmt.Printf("%v is even\n", val)
@@ -50,4 +47,9 @@ func evenAndOdd(nums []int) {
 			fmt.Printf("%v is odd\n", val)
 		}
 	}
+}
+
+func removeDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
+
+	return linkedList
 }
