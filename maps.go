@@ -50,7 +50,19 @@ func evenAndOdd(nums []int) {
 	}
 }
 
-func removeDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
+type LinkedList struct {
+	Value int
+	Next  *LinkedList
+}
 
+func removeDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
+	curr := linkedList
+	for curr.Next != nil {
+		if curr.Value == curr.Next.Value {
+			curr.Next = curr.Next.Next
+		} else {
+			curr = curr.Next
+		}
+	}
 	return linkedList
 }
