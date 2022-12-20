@@ -6,7 +6,7 @@ func main() {
 	twoSum([]int{7, 15, 11, 2}, 9)
 	// threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
 	evenAndOdd([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
-	removeDuplicatesFromLinkedList()
+	removeDuplicatesFromLinkedList(&LinkedList{1, &LinkedList{1, &LinkedList{3, &LinkedList{4, &LinkedList{4, &LinkedList{4, &LinkedList{5, &LinkedList{6, &LinkedList{6, nil}}}}}}}}})
 }
 
 func twoSum(nums []int, target int) []int {
