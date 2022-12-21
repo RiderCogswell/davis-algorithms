@@ -77,3 +77,15 @@ func nThFibonacci(n int) int {
 	}
 	return nThFibonacci(n-1) + nThFibonacci(n-2)
 }
+
+// iterative solution
+func nThFib(n int) int {
+	if n == 1 {
+		return 0
+	}
+
+	num1, num2 := 0, 1
+	for i := 3; i <= n; i++ {
+		num1, num2 = num2, num1+num2
+	}
+}
