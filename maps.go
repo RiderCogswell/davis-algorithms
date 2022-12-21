@@ -66,3 +66,14 @@ func removeDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
 	}
 	return linkedList
 }
+
+// recursive solution
+func nThFibonacci(n int) int {
+	if n == 1 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
+	return nThFibonacci(n-1) + nThFibonacci(n-2)
+}
