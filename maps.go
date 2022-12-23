@@ -7,6 +7,8 @@ func main() {
 	// threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
 	evenAndOdd([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
 	removeDuplicatesFromLinkedList(&LinkedList{1, &LinkedList{1, &LinkedList{3, &LinkedList{4, &LinkedList{4, &LinkedList{4, &LinkedList{5, &LinkedList{6, &LinkedList{6, nil}}}}}}}}})
+	fmt.Println(nThFibonacci(6))
+	fmt.Println(nThFib(6))
 }
 
 func twoSum(nums []int, target int) []int {
@@ -84,8 +86,10 @@ func nThFib(n int) int {
 		return 0
 	}
 
-	num1, num2 := 0, 1
+	first, second := 0, 1
 	for i := 3; i <= n; i++ {
-		num1, num2 = num2, num1+num2
+		first, second = second, first+second
 	}
+	return second
 }
+
