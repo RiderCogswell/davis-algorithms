@@ -3,12 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	twoSum([]int{7, 15, 11, 2}, 9)
-	// threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
-	evenAndOdd([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
-	removeDuplicatesFromLinkedList(&LinkedList{1, &LinkedList{1, &LinkedList{3, &LinkedList{4, &LinkedList{4, &LinkedList{4, &LinkedList{5, &LinkedList{6, &LinkedList{6, nil}}}}}}}}})
-	fmt.Println(nThFibonacci(6))
-	fmt.Println(nThFib(6))
+	// twoSum([]int{7, 15, 11, 2}, 9)
+	// // threeSum([]int{2, 11, 7, 15, 14, 5, 32, 3, -26}, 18)
+	// evenAndOdd([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	// removeDuplicatesFromLinkedList(&LinkedList{1, &LinkedList{1, &LinkedList{3, &LinkedList{4, &LinkedList{4, &LinkedList{4, &LinkedList{5, &LinkedList{6, &LinkedList{6, nil}}}}}}}}})
+	// fmt.Println(nThFibonacci(6))
+	// fmt.Println(nThFib(6))
+	bubbleSort([]int{8, 5, 2, 9, 5, 6, 3})
 }
 
 func twoSum(nums []int, target int) []int {
@@ -93,41 +94,54 @@ func nThFib(n int) int {
 	return second
 }
 
-func mergeSort(array []int) []int {
-	if len(array) == 1 {
-		return array
-	}
-	mid := len(array) / 2
-	left := mergeSort(array[:mid])
-	right := mergeSort(array[mid:])
-	return merge(mergeSort(left), mergeSort(right))
-}
+// func mergeSort(array []int) []int {
+// 	if len(array) == 1 {
+// 		return array
+// 	}
+// 	mid := len(array) / 2
+// 	left := mergeSort(array[:mid])
+// 	right := mergeSort(array[mid:])
+// 	return merge(mergeSort(left), mergeSort(right))
+// }
 
-func merge(left, right []int) (result []int) {
-	result := make([]int, len(left) + len(right))
+// func merge(left, right []int) (result []int) {
+// 	result := make([]int, len(left) + len(right))
 
-	i := 0
+// 	i := 0
 
-	for len(left) > 0 && len(right) > 0 {
-		if left[0] < right[0] {
-			result[i] = left[0]
-			left = left[1:]
-		} else {
-			result[i] = right[0]
-			right = right[1:]
+// 	for len(left) > 0 && len(right) > 0 {
+// 		if left[0] < right[0] {
+// 			result[i] = left[0]
+// 			left = left[1:]
+// 		} else {
+// 			result[i] = right[0]
+// 			right = right[1:]
+// 		}
+// 		i++
+// 	}
+
+// 	for j := 0; j < len(left); j++ {
+// 		result[i] = left[j]
+// 		i++
+// 	}
+	
+// 	for j := 0; j < len(right); j++ {
+// 		result[i] = right[j]
+// 		i++
+// 	}
+	
+// 	return
+// }
+
+func bubbleSort(nums []int) []int {
+	for i := len(nums); i > 0; i-- {
+		for j := 0; j < i; j++ {
+			if nums[j-1] > nums[j] {
+				temp := nums[j]
+				nums[j] = nums[j-1]
+				nums[j-1] = temp
+			}
 		}
-		i++
 	}
-
-	for j := 0; j < len(left); j++ {
-		result[i] = left[j]
-		i++
-	}
-	
-	for j := 0; j < len(right); j++ {
-		result[i] = right[j]
-		i++
-	}
-	
-	return
+	return nums
 }
