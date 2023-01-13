@@ -9,7 +9,8 @@ func main() {
 	// removeDuplicatesFromLinkedList(&LinkedList{1, &LinkedList{1, &LinkedList{3, &LinkedList{4, &LinkedList{4, &LinkedList{4, &LinkedList{5, &LinkedList{6, &LinkedList{6, nil}}}}}}}}})
 	// fmt.Println(nThFibonacci(6))
 	// fmt.Println(nThFib(6))
-	bubbleSort([]int{8, 5, 2, 9, 5, 6, 3})
+	fmt.Println(bubbleSort([]int{8, 5, 2, 9, 5, 6, 3}))
+	fmt.Println(quickSort([]int{8, 5, 2, 9, 5, 6, 3}))
 }
 
 func twoSum(nums []int, target int) []int {
@@ -133,15 +134,35 @@ func nThFib(n int) int {
 // 	return
 // }
 
-func bubbleSort(nums []int) []int {
-	for i := len(nums); i > 0; i-- {
-		for j := 0; j < i; j++ {
-			if nums[j-1] > nums[j] {
-				temp := nums[j]
-				nums[j] = nums[j-1]
-				nums[j-1] = temp
-			}
+// func bubbleSort(nums []int) []int {
+// 	for i := len(nums); i > 0; i-- {
+// 		for j := 0; j < i; j++ {
+// 			if nums[j-1] > nums[j] {
+// 				temp := nums[j]
+// 				nums[j] = nums[j-1]
+// 				nums[j-1] = temp
+// 			}
+// 		}
+// 	}
+// 	return nums
+// }
+
+func quickSort(nums []int) []int {
+	if len(nums) <= 1 {
+		return nums
+	}
+
+	pivot := nums[0]
+	left := []int{}
+	right := []int{}
+
+	for i := 1; i < len(nums); i++ {
+		if nums[i] < pivot {
+			left = append(left, nums[i])
+		} else {
+			right = append(right, nums[i])
 		}
 	}
-	return nums
+
+	return append(append(quickSort(left), pivot), quickSort(right)...)
 }
