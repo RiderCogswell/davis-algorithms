@@ -7,3 +7,11 @@ const fib = (n: number): number => {
 
   return base[n];
 };
+
+const nthFib = (n: number): number => {
+  if (n <= 1) {
+    return n;
+  }
+
+  return nthFib(n - 1) + nthFib(n - 2);
+}
