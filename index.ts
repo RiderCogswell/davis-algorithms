@@ -15,3 +15,15 @@ const nthFibIteratively = (n: number): number => {
 
   return base[n];
 }
+
+const mergeSort = (arr: number[]): number[] => {
+  // Write your code here 
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  let mid = Math.floor(arr.length / 2);
+  let left = arr.slice(0, mid);
+  let right = arr.slice(mid);
+
+  
