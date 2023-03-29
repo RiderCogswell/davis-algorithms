@@ -50,3 +50,22 @@ function miniMaxSum(arr) {
     var max = Math.max.apply(Math, arr);
     return [(sum - max), (sum - min)];
 }
+
+// Write code to add all the numbers in `arr` and return the total
+
+var sumArray2 = function(arr) {
+    let x = 0;
+  
+    for (let i = 0; i < arr.length; i++) {
+      x += arr[i];
+    }
+    console.log(x);
+  };
+  
+  var sumArray = function(arr) {
+    let x = arr.reduce((a, b) => a + b, 0);
+    console.log(x);
+  };
+  
+  sumArray([1, 2, 3, 4, 5, 6]);
+  sumArray2([1, 2, 3, 4, 5, 6]);

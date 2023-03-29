@@ -1,21 +1,52 @@
-const Benchmark = require('benchmark');
-const { mostDuplicates, optimizedDuplicates } = require('./dupes');
+var nthFib = function (n) {
+    if (n <= 1) {
+        return n;
+    }
+    return nthFib(n - 1) + nthFib(n - 2);
+};
+var nthFibIteratively = function (n) {
+    var base = [0, 1];
+    for (var i = 2; i <= n; i++) {
+        base.push(base[i - 2] + base[i - 1]);
+    }
+    return base[n];
+};
+var mergeSort = function (arr) {
+    // Write your code here
+    mergeSortRange(arr, 0, arr.length - 1);
+};
+var mergeSortRange = function (arr, l, r) {
+    // Write your code here 
+    if (l >= r)
+        return;
+    var m = Math.floor(l + (r - l) / 2);
+    mergeSortRange(arr, l, m);
+    mergeSortRange(arr, m + 1, r);
+    merge(arr, l, m, r);
+};
+var merge = function (arr, l, m, r) {
+    var res = arr.slice(l, r + 1);
+    var i = l;
+    var j = m + 1;
+    var k = 0;
 
-const numbers = [];
-for (let i = 1; i <= 10000; i++) {
-    numbers.push(Math.floor(Math.random() * 10000) + 1);
+    while (i <= m && j <= r) {
+        const v1 = res[i - l];
+        const v2 = res[j - l];
+
+        if (v1 < v2) {
+            arr[k++] = v1;
+            ++i;
+        } else {
+            arr[k++] = v2;
+            ++j;
+        }
+    }
+    
+    while (i <= m) arr[k++] = res[i++ - l];
+    while (j <= m) arr[k++] = res[j++ - l];
+        
+    console.log(arr);
 };
 
-const suite = new Benchmark.Suite;
-
-suite
-    .add('duplicates test', function() {
-        mostDuplicates(numbers);
-    })
-    .add('optimized dupes test', function() {
-        optimizedDuplicates(numbers)
-    })
-    .on('complete', function() {
-        this.forEach(result => console.log(`${result.name} averaged ${result.stats.mean*1000} milliseconds.`));
-    })
-    .run();
+mergeSort([346, 756, 6, 654, 345, 900, 549, 45]);

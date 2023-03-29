@@ -16,6 +16,11 @@ const nthFibIteratively = (n: number): number => {
   return base[n];
 }
 
+const mergeSort = (arr: number[]) => { 
+  // Write your code here
+  mergeSortRange(arr, 0, arr.length - 1);
+}
+
 const mergeSortRange = (arr: number[], l: number, r: number) => {
   // Write your code here 
   if (l >= r) return;
@@ -27,5 +32,27 @@ const mergeSortRange = (arr: number[], l: number, r: number) => {
 }
 
 const merge = (arr: number[], l: number, m: number, r: number) => {
-  
+  let res = arr.slice(l, r + 1);
+  let i = l;
+  let j = m + 1;
+  let k = 0;
+
+  while (i <= m && j <= r) {
+    const v1 = res[i - l];
+    const v2 = res[j - l];
+
+    if (v1 < v2) {
+        arr[k++] = v1;
+        ++i;
+    } else {
+        arr[k++] = v2;
+        ++j;
+    }
+  }
+
+while (i <= m) arr[k++] = res[i++ - l];
+while (j <= m) arr[k++] = res[j++ - l];
+    
 }
+
+mergeSort([346, 756, 6, 654, 345, 900, 549, 45])
